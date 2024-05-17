@@ -82,11 +82,19 @@ int is_valid(Node* n)
             {
                if (n->sudo[i + k][j + l] != 0)
                {
+                  if (sub_fila[n->sudo[i + k][j + l]] == 1)
+                  {
+                     return 0;
+                  }
                   sub_fila[n->sudo[i + k][j + l]] = 1;
                }
 
                if (n->sudo[j + l][i + k] != 0)
                {
+                  if (sub_columna[n->sudo[j + l][i + k]] == 1)
+                  {
+                     return 0;
+                  }
                   sub_columna[n->sudo[j + l][i + k]] = 1;
                }
             }

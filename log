@@ -149,3 +149,9 @@ sudoku.c:77:14: error: variable ‘sub_fila’ set but not used [-Werror=unused-
 cc1: all warnings being treated as errors
 Compilation failed
 57f2562
+Fri 17 May 2024 12:43:57 AM UTC: 
+ sudoku.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ tests:  10|0
+total_score: 70/70
+806d5c7
