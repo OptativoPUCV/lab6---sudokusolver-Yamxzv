@@ -46,6 +46,7 @@ void print_node(Node* n){
 int is_valid(Node* n)
 {
    
+   
    return 1;
 }
 
@@ -98,11 +99,11 @@ Node* DFS(Node* initial, int* cont)
    {
       Node* actual = top(stack);
       pop(stack);
-      
       if (is_final(actual))
       {
          return actual;
       }
+      
       List* adj = get_adj_nodes(actual);
       Node* aux = first(adj);
       while (aux)
