@@ -51,14 +51,16 @@ int is_valid(Node* n)
       int columna[10] = {0};
       for (int j = 0; j < 9; j++)
       {
-          if (n->sudo[i][j] != 0)
-          {
-               if (fila[n->sudo[i][j]] == 1)
-               {
-                  return 0;
-               }
-               fila[n->sudo[i][j]] = 1;
-          }
+         if (n->sudo[i][j] != 0)
+         {
+            if (fila[n->sudo[i][j]] == 1)
+            {
+               return 0;
+            }
+            fila[n->sudo[i][j]] = 1;
+         }
+         
+         if (n->sudo[j][i] != 0)
       }
    }
    
