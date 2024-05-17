@@ -101,7 +101,15 @@ Node* DFS(Node* initial, int* cont)
       pop(stack);
       if (is_final(actual))
       {
-         return actual;
+
+         List* adj = get_adj_nodes(actual);
+         Node* aux = first(adj);
+         while (aux)
+         {
+            push(stack, aux);
+            aux = next(adj);
+         }
+         free(actual);
       }
       
       List* adj = get_adj_nodes(actual);
