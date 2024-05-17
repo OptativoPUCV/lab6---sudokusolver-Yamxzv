@@ -59,7 +59,7 @@ int is_valid(Node* n)
             }
             fila[n->sudo[i][j]] = 1;
          }
-         
+
          if (n->sudo[j][i] != 0)
          {
             if (columna[n->sudo[j][i]] == 1)
@@ -70,7 +70,38 @@ int is_valid(Node* n)
          }
       }
    }
-   
+   for (int i = 0; i < 9; i += 3)
+   {
+      for (int j = 0; j < 9; j += 3)
+      {
+         int sub_fila[10] = {0};
+         int sub_columna[10] = {0};
+         for (int k = 0; k < 3; k++)
+         {
+            for (int l = 0; l < 3; l++)
+            {
+               if (n->sudo[i + k][j + l] != 0)
+               {
+                  if (sub_fila[n->sudo[i + k][j + l]] == 1)
+                  {
+                     return 0;
+                  }
+                  sub_fila[n->sudo[i + k][j + l]] = 1;
+               }
+
+               if (n->sudo[j + l][i + k] != 0)
+               {
+                  if (sub_columna[n->sudo[j + l][i + k]] == 1)
+                  {
+                     return 0;
+                  }
+                  sub_columna[n->sudo[j + l][i + k]] = 1;
+               }
+            }
+         }
+      }
+   }
+
    return 1;
 }
 
@@ -127,7 +158,7 @@ Node* DFS(Node* initial, int* cont)
       {
          return actual;
       }
-      
+
       List* adj = get_adj_nodes(actual);
       Node* aux = first(adj);
       while (aux)
