@@ -53,7 +53,11 @@ int is_valid(Node* n)
       for (int j = 0; j < 9; j++)
       {
          columna[j] = n->sudo[j][i];
-         
+         for (int k = 0; k < 9; k++)
+         {
+            if (fila[k] == columna[j]) return 0;
+            
+         }
       }
    }
    
