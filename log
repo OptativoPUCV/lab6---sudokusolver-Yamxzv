@@ -135,3 +135,17 @@ Fri 17 May 2024 12:43:12 AM UTC:
  tests:  10|0
 total_score: 70/70
 0b89551
+Fri 17 May 2024 12:43:26 AM UTC: 
+ sudoku.c | 8 --------
+ 1 file changed, 8 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:78:14: error: variable ‘sub_columna’ set but not used [-Werror=unused-but-set-variable]
+   78 |          int sub_columna[10] = {0};
+      |              ^~~~~~~~~~~
+sudoku.c:77:14: error: variable ‘sub_fila’ set but not used [-Werror=unused-but-set-variable]
+   77 |          int sub_fila[10] = {0};
+      |              ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+57f2562
