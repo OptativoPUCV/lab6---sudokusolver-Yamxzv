@@ -45,21 +45,6 @@ void print_node(Node* n){
 
 int is_valid(Node* n)
 {
-   if (n == NULL) return 0;
-   for (int i = 0; i < 9; i++)
-   {
-      int *fila = n->sudo[i];
-      int *columna = malloc(sizeof(int) * 9);
-      for (int j = 0; j < 9; j++)
-      {
-         columna[j] = n->sudo[j][i];
-         for (int k = 0; k < 9; k++)
-         {
-            if (fila[k] == columna[j]) return 0;
-            
-         }
-      }
-   }
    
    return 1;
 }
